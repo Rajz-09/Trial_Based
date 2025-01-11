@@ -1,3 +1,4 @@
+
 // Enhanced JWT Parsing Function
 function parseJWT(token) {
     try {
