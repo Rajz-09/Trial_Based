@@ -32,7 +32,7 @@ document.getElementById("loginForm").addEventListener("submit", async function (
     const password = document.getElementById("loginPassword").value;
 
     try {
-        const response = await fetch("https://swarparivrittidemo.vercel.app/api/login", {
+        const response = await fetch("https://swarparivritti-backend.onrender.com/api/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password }),
@@ -59,7 +59,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
     const password = document.getElementById("registerPassword").value;
 
     try {
-        const response = await fetch("https://swarparivrittidemo.vercel.app/api/register", {
+        const response = await fetch("https://swarparivritti-backend.onrender.com/api/register", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password }),

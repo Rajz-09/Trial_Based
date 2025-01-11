@@ -62,7 +62,7 @@ async function processPayment(event, productName, amount, description) {
         const userName = user.name || user.email.split('@')[0];
 
         // Step 1: Create an order
-        const response = await fetch('https://swarparivrittidemo.vercel.app/api/createOrder', {
+        const response = await fetch('https://swarparivritti-backend.onrender.com/api/createOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ async function processPayment(event, productName, amount, description) {
                     //alert("Payment Succeeded! Payment ID: " + response.razorpay_payment_id);
 
                     // Step 3: Notify backend of payment success
-                    const paymentResponse = await fetch('https://swarparivrittidemo.vercel.app/api/simulatePaymentSuccess', {
+                    const paymentResponse = await fetch('https://swarparivritti-backend.onrender.com/api/simulatePaymentSuccess', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
