@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Transposition Tool Guide</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/userGuide.css">
+    <link rel="stylesheet" href="css/layout.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Yatra+One&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <!-- Mobile Menu Button -->
+        <div class="menuShow">
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <span class="tooltip">Menu</span>
+        </div>
+
+
+        <!-- Logo -->
+        <div class="logo">
+            <img src="Images/Swar_logo_NEW_Final_2.png" alt="Logo">
+        </div>
+
+        <!-- Horizontal Navbar Links -->
+        <ul class="nav-links horizontal-nav">
+            <li class="user-profile">
+                <span class="profile-icon" id="profile-icon">J</span>
+            </li>
+            <li><a href="./mainContent.html" class="nav-link active" data-page="mainContent">Home</a></li>
+            <li><a href="./fluteFingering.html" class="nav-link" data-page="fluteFingering">Goto Fingers</a></li>
+            <li><a href="./userGuide.html" class="nav-link" data-page="userGuide">User Guide</a></li>
+            <li><a href="./membership.html" class="nav-link" data-page="membership">Membership</a></li>
+            <li><a href="./contactUs.html" class="nav-link" data-page="contactUs">Contact Us</a></li>
+        </ul>
+
+        <!-- Mobile Navbar Links -->
+        <ul class="nav-links mobile-nav" id="navLinks">
+            <li class="user-profile-mobile" style="margin-bottom: 60px;">J</li>
+            <li>
+                <a href="./mainContent.html" class="nav-link active" data-page="mainContent">
+                    <i class="fas fa-home"></i> Home
+                </a>
+            </li>
+            <li>
+                <a href="./fluteFingering.html" class="nav-link" data-page="fluteFingering">
+                    <i class="fas fa-music"></i> Goto Fingers
+                </a>
+            </li>
+            <li>
+                <a href="./userGuide.html" class="nav-link" data-page="userGuide">
+                    <i class="fas fa-headset"></i> User Guide
+                </a>
+            </li>
+            <li>
+                <a href="./membership.html" class="nav-link" data-page="membership">
+                    <i class="fas fa-info-circle"></i> Membership
+                </a>
+            </li>
+            <li>
+                <a href="./contactUs.html" class="nav-link" data-page="contactUs">
+                    <i class="fas fa-info-circle"></i> Contact Us
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <div id="mainContent">
+        <div>
+            <h1 class="text-center mb-4">
+                <span class="icon-left">🎵</span> How to Use the Note Transposition Tool <span
+                    class="icon-right">🎵</span>
+            </h1>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2>1. Setting Up Scales</h2>
+                    <p>Enter the <strong>Original Flute Scale</strong> your are holding (e.g., C) and the <strong>Flute
+                            Scale</strong> (e.g., A) to set up the scale transposition. This defines you want to play
+                        the A
+                        scale notes in the flute of scale C scale.</p>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2>2. Entering Notes</h2>
+                    <p>Type your musical notes in the input area. Notes should be separated by dots or space. You can
+                        take
+                        the reference from the <strong class="ref-link"><a
+                                href="https://www.notationsworld.com/radha-kaise-na-jale-sargam-harmonium-and-flute-notes.html">Notations
+                                World.</a></strong></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h2>3. Viewing Results</h2>
+                    <p>After pressing the <strong>Convert Scale</strong> button, you'll see the transposed notes
+                        displayed
+                        as an output. Copy the notes to clipboard for further use!</p>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2>4. Explore</h2>
+                    <p>Explore finger placements by navigating to the <strong>Go to Fingers.</strong></p>
+                </div>
+            </div>
+
+            <div class="notation-section">
+                <div class="notation-layout">
+                    <!-- Basic Notations -->
+                    <div class="notation-box">
+                        <h3>Notations</h3>
+                        <div class="notation-list" style="line-height: 70px;">
+                            <div>SA - S</div>
+                            <div>RE - R</div>
+                            <div>GA - G</div>
+                            <div>MA - M</div>
+                            <div>PA - P</div>
+                            <div>DHA - D</div>
+                            <div>NI - N</div>
+                        </div>
+                    </div>
+
+                    <div class="right-section">
+                        <!-- Low and Komal Octave Container -->
+                        <div class="octave-container">
+                            <div class="octave-half">
+                                <h3>Low Octave</h3>
+                                <div class="notation-list">
+                                    <div>PA - p</div>
+                                    <div>DHA - d</div>
+                                    <div>NI - n</div>
+                                </div>
+                            </div>
+                            <div class="octave-half">
+                                <h3>Komal Octave</h3>
+                                <div class="notation-list">
+                                    <div>DHA - D(k)</div>
+                                    <div>NI - N(k)</div>
+                                    <div>RE - R(k)</div>
+                                    <div>GA - G(k)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- High Octave and Special Notes Container -->
+                        <div class="octave-container">
+                            <div class="octave-half">
+                                <h3>High Octave</h3>
+                                <div class="notation-list">
+                                    <div>SA - S'</div>
+                                    <div>RE - R'</div>
+                                    <div>GA - G'</div>
+                                    <div>MA - M'</div>
+                                    <div>PA - P'</div>
+                                </div>
+                            </div>
+                            <div class="octave-half">
+                                <div class="notation-list special-notes">
+                                    <div>SHUDH MA - m</div>
+                                    <div>TIWAR MA - M</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <a href="./index.html" class="back-link" style="text-decoration: none; margin-bottom: 50px;">Back to Conversion
+        Tool</a> -->
+</body>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+
+<script src="javascript/layout.js"></script>
+
+</html>

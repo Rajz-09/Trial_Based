@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/contactUs.css">
+    <link rel="stylesheet" href="css/layout.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Yatra+One&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <!-- Mobile Menu Button -->
+        <div class="menuShow">
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <span class="tooltip">Menu</span>
+        </div>
+
+
+        <!-- Logo -->
+        <div class="logo">
+            <img src="Images/Swar_logo_NEW_Final_2.png" alt="Logo">
+        </div>
+
+        <!-- Horizontal Navbar Links -->
+        <ul class="nav-links horizontal-nav">
+            <li class="user-profile">
+                <span class="profile-icon" id="profile-icon">J</span>
+            </li>
+            <li><a href="./mainContent.html" class="nav-link active" data-page="mainContent">Home</a></li>
+            <li><a href="./fluteFingering.html" class="nav-link" data-page="fluteFingering">Goto Fingers</a></li>
+            <li><a href="./userGuide.html" class="nav-link" data-page="userGuide">User Guide</a></li>
+            <li><a href="./membership.html" class="nav-link" data-page="membership">Membership</a></li>
+            <li><a href="./contactUs.html" class="nav-link" data-page="contactUs">Contact Us</a></li>
+        </ul>
+
+        <!-- Mobile Navbar Links -->
+        <ul class="nav-links mobile-nav" id="navLinks">
+            <li class="user-profile-mobile" style="margin-bottom: 60px;">J</li>
+            <li>
+                <a href="./mainContent.html" class="nav-link active" data-page="mainContent">
+                    <i class="fas fa-home"></i> Home
+                </a>
+            </li>
+            <li>
+                <a href="./fluteFingering.html" class="nav-link" data-page="fluteFingering">
+                    <i class="fas fa-music"></i> Goto Fingers
+                </a>
+            </li>
+            <li>
+                <a href="./userGuide.html" class="nav-link" data-page="userGuide">
+                    <i class="fas fa-headset"></i> User Guide
+                </a>
+            </li>
+            <li>
+                <a href="./membership.html" class="nav-link" data-page="membership">
+                    <i class="fas fa-info-circle"></i> Membership
+                </a>
+            </li>
+            <li>
+                <a href="./contactUs.html" class="nav-link" data-page="contactUs">
+                    <i class="fas fa-info-circle"></i> Contact Us
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <div id="mainContent">
+        <div>
+            <div class="row">
+                <!-- Feedback Form -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <h2 class="card-title">Feedback Form</h2>
+                        <form>
+                            <div class="form-group">
+                                <label class="form-label">Name :</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email :</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Message :</label>
+                                <textarea class="form-control" rows="3" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-submit">Submit Feedback</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <!-- <div class="col-md-6 mb-4">
+                <div class="card">
+                    <h2 class="card-title">Contact Us</h2>
+                    <div class="contact-info">
+                        <p><strong>Email:</strong> <a href="mailto:contact.swarprivritti@gmail.com">contact.swarprivritti@gmail.com</a></p>
+                        <p><strong>LinkedIn:</strong> </p>
+                    </div>
+                </div>
+            </div> -->
+
+                <div class="col-md-6 d-flex align-items-center justify-content-center mb-4">
+                    <div class="card-contact p-4" style="height: 250px; width: 100%; max-width: 400px;">
+                        <h2 class="card-title">Contact Us</h2>
+                        <div class="contact-info mt-4 text-center ">
+                            <a href="mailto:contact.swarprivritti@gmail.com"
+                                class="btn btn-red shadow rounded-circle mx-2" style="height: 70px; width: 70px;">
+                                <i class="fas fa-envelope fa-lg"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/rajviadesara/" target="_blank"
+                                class="btn btn-light shadow rounded-circle mx-2" style="height: 70px; width: 70px;">
+                                <i class="fab fa-linkedin fa-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+     <!-- Bootstrap JS and dependencies -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+
+    <script src="javascript/layout.js"></script>
+
+    <body>
+
+</html>

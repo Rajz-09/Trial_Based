@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/fluteFingering.css">
+    <link rel="stylesheet" href="css/layout.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Yatra+One&display=swap"
+        rel="stylesheet">
+
+    <title>Interactive Bansuri Fingering Chart</title>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <!-- Mobile Menu Button -->
+        <div class="menuShow">
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <span class="tooltip">Menu</span>
+        </div>
+
+
+        <!-- Logo -->
+        <div class="logo">
+            <img src="Images/Swar_logo_NEW_Final_2.png" alt="Logo">
+        </div>
+
+        <!-- Horizontal Navbar Links -->
+        <ul class="nav-links horizontal-nav">
+            <li class="user-profile">
+                <span class="profile-icon" id="profile-icon">J</span>
+            </li>
+            <li><a href="./mainContent.html" class="nav-link active" data-page="mainContent">Home</a></li>
+            <li><a href="./fluteFingering.html" class="nav-link" data-page="fluteFingering">Goto Fingers</a></li>
+            <li><a href="./userGuide.html" class="nav-link" data-page="userGuide">User Guide</a></li>
+            <li><a href="./membership.html" class="nav-link" data-page="membership">Membership</a></li>
+            <li><a href="./contactUs.html" class="nav-link" data-page="contactUs">Contact Us</a></li>
+        </ul>
+
+        <!-- Mobile Navbar Links -->
+        <ul class="nav-links mobile-nav" id="navLinks">
+            <li class="user-profile-mobile" style="margin-bottom: 60px;">J</li>
+            <li>
+                <a href="./mainContent.html" class="nav-link active" data-page="mainContent">
+                    <i class="fas fa-home"></i> Home
+                </a>
+            </li>
+            <li>
+                <a href="./fluteFingering.html" class="nav-link" data-page="fluteFingering">
+                    <i class="fas fa-music"></i> Goto Fingers
+                </a>
+            </li>
+            <li>
+                <a href="./userGuide.html" class="nav-link" data-page="userGuide">
+                    <i class="fas fa-headset"></i> User Guide
+                </a>
+            </li>
+            <li>
+                <a href="./membership.html" class="nav-link" data-page="membership">
+                    <i class="fas fa-info-circle"></i> Membership
+                </a>
+            </li>
+            <li>
+                <a href="./contactUs.html" class="nav-link" data-page="contactUs">
+                    <i class="fas fa-info-circle"></i> Contact Us
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+<div id="mainContent">
+
+    <div class="container transposer-container">
+        <h1 class="title">Interactive Bansuri Fingering Chart</h1>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-symbol half-open" style="background-color: #864606"></div>
+                <span>Blowing Point</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-symbol open" style="border: 1px solid #2c3e50;"></div>
+                <span>Open</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-symbol half-closed" style="background-color: #95a5a6;"></div>
+                <span>Half Closed</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-symbol closed" style="background-color: #2c3e50;"></div>
+                <span>Closed</span>
+            </div>
+        </div>
+
+        <svg id="flute" viewBox="0 0 700 80" width="800px" height="80px" style="margin-left: 15px;">
+            <!-- Definitions for gradients -->
+            <defs>
+                <linearGradient id="woodGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#D4B08C;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#E5C09F;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#D4B08C;stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="endCapGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#2F2F2F;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#4F4F4F;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+
+            <!-- End caps with rounded corners -->
+            <rect x="0" y="10" width="35" height="60" fill="url(#endCapGradient)" rx="10" ry="10" />
+            <rect x="645" y="10" width="35" height="60" fill="url(#endCapGradient)" rx="10" ry="10" />
+
+            <!-- Main flute body with rounded corners -->
+            <rect x="30" y="10" width="620" height="60" fill="url(#woodGradient)" rx="10" ry="10" />
+
+            <!-- Holes -->
+            <circle cx="80" cy="40" r="12" fill="#864606" />
+
+            <!-- Rajz text with rotation -->
+            <text class="signature-text" x="120" y="55" transform="rotate(-12, 110, 20)"
+                style="font-size: 23px;">ॐ</text>
+            <circle class="hole" cx="200" cy="40" r="12" />
+            <circle class="hole" cx="270" cy="40" r="12" />
+            <circle class="hole" cx="340" cy="40" r="12" />
+            <circle class="hole" cx="410" cy="40" r="12" />
+            <circle class="hole" cx="480" cy="40" r="12" />
+            <circle class="hole" cx="560" cy="40" r="12" />
+        </svg>
+
+        <div id="note-display" class="mb-4" style="text-align: center; margin-top: 20px; ">
+            <h2 id="current-note">Sa</h2>
+        </div>
+        <div class="mb-3">
+            <h5 style="text-align: start;">Select an Octave</h5>
+            <select id="octave-select" class="form-select">
+                <option value="middle_octave">મધ્ય સપ્તક (Middle Octave)</option>
+                <option value="lowest_octave">મન્દ્ર સપ્તક (Lowest Octave)</option>
+                <option value="high_octave">તાર સપ્તક (High Octave)</option>
+                <!-- <option value="top_octave">અતિતાર સપ્તક (Top)</option> -->
+            </select>
+        </div>
+        <div class="button-group mb-4">
+            <h5 style="text-align: start; margin-top: 20px;">Click a Note</h5>
+            <div class="btn-group btn-group-lg mb-3" role="group" aria-label="Basic example">
+                <button id="btn-Sa" type="button" class="btn btn-primary" onclick="updateFingering('Sa')">Sa</button>
+                <button id="btn-re" type="button" class="btn btn-info" onclick="updateFingering('re')">re</button>
+                <button id="btn-Re" type="button" class="btn btn-success" onclick="updateFingering('Re')">Re</button>
+                <button id="btn-ga" type="button" class="btn btn-danger" onclick="updateFingering('ga')">ga</button>
+                <button id="btn-Ga" type="button" class="btn btn-warning" onclick="updateFingering('Ga')">Ga</button>
+                <button id="btn-ma" type="button" class="btn btn-dark" onclick="updateFingering('ma')">ma</button>
+                <button id="btn-Ma" type="button" class="btn btn-primary" onclick="updateFingering('Ma')">Ma</button>
+                <button id="btn-Pa" type="button" class="btn btn-info" onclick="updateFingering('Pa')">Pa</button>
+                <button id="btn-dha" type="button" class="btn btn-success" onclick="updateFingering('dha')">dha</button>
+                <button id="btn-Dha" type="button" class="btn btn-danger" onclick="updateFingering('Dha')">Dha</button>
+                <button id="btn-ni" type="button" class="btn btn-warning" onclick="updateFingering('ni')">ni</button>
+                <button id="btn-Ni" type="button" class="btn btn-dark" onclick="updateFingering('Ni')">Ni</button>
+            </div>
+            <!-- <a href="./index.html" class="back-link" style="margin-top: 20px;">Back to Notes</a> -->
+        </div>
+
+    </div>
+</div>
+
+<script>
+    const fingeringPatterns = [
+        {
+            "note": "Sa",
+            "lowest_octave": null,
+            "middle_octave": [2, 2, 2, 0, 0, 0],
+            "high_octave": [2, 2, 2, 0, 0, 0],
+            // "top_octave": [2, 2, 0, 2, 1, 0, 0]
+        },
+        {
+            "note": "re",
+            "lowest_octave": null,
+            "middle_octave": [2, 2, 1, 0, 0, 0],
+            "high_octave": [2, 2, 1, 0, 0, 0],
+            // "top_octave": [2, 0, 0, 2, 0, 0, 0]
+        },
+        {
+            "note": "Re",
+            "lowest_octave": null,
+            "middle_octave": [2, 2, 0, 0, 0, 0],
+            "high_octave": [2, 2, 0, 0, 0, 0],
+            // "top_octave": [2, 0, 2, 2, 2, 2, 0]
+        },
+        {
+            "note": "ga",
+            "lowest_octave": null,
+            "middle_octave": [2, 1, 0, 0, 0, 0],
+            "high_octave": [2, 1, 0, 0, 0, 0],
+            // "top_octave": null
+        },
+        {
+            "note": "Ga",
+            "lowest_octave": null,
+            "middle_octave": [2, 0, 0, 0, 0, 0],
+            "high_octave": [2, 0, 0, 0, 0, 0],
+            // "top_octave": null
+        },
+        {
+            "note": "ma",
+            "lowest_octave": null,
+            "middle_octave": [1, 0, 0, 0, 0, 0],
+            "high_octave": [1, 0, 0, 0, 0, 0],
+            // "top_octave": null
+        },
+        {
+            "note": "Ma",
+            "lowest_octave": [2, 2, 2, 2, 2, 2],
+            "middle_octave": [0, 0, 0, 0, 0],
+            "high_octave": [0, 0, 0, 0, 0, 0],
+            // "top_octave": null
+        },
+        {
+            "note": "Pa",
+            "lowest_octave": [2, 2, 2, 2, 2, 2],
+            "middle_octave": [2, 2, 2, 2, 2, 2],
+            "high_octave": [2, 2, 2, 2, 2, 2],
+            // "top_octave": null
+        },
+        {
+            "note": "dha",
+            "lowest_octave": [2, 2, 2, 2, 2, 1],
+            "middle_octave": [2, 2, 2, 2, 2, 1],
+            "high_octave": [2, 2, 1, 0, 0, 2],
+            // "top_octave": null
+        },
+        {
+            "note": "Dha",
+            "lowest_octave": [2, 2, 2, 2, 2, 0],
+            "middle_octave": [2, 2, 2, 2, 2, 0],
+            "high_octave": [2, 2, 2, 0, 0, 0, 2],
+            // "top_octave": null
+        },
+        {
+            "note": "ni",
+            "lowest_octave": [2, 2, 2, 2, 1, 0],
+            "middle_octave": [2, 2, 2, 2, 1, 0],
+            "high_octave": [2, 1, 0, 0, 0, 2],
+            // "top_octave": null
+        },
+        {
+            "note": "Ni",
+            "lowest_octave": [2, 2, 2, 2, 0, 0],
+            "middle_octave": [2, 2, 2, 2, 0, 0],
+            "high_octave": [2, 1, 2, 2, 2, 2],
+            // "top_octave": null
+        }
+    ];
+
+    document.getElementById("octave-select").addEventListener("change", function () {
+        const octave = this.value;
+
+        // Enable all buttons first
+        const buttons = document.querySelectorAll('.btn-group .btn');
+        buttons.forEach(button => {
+            button.removeAttribute('disabled');
+        });
+
+        // If the lowest octave is selected, disable certain buttons
+        if (octave === "lowest_octave") {
+            document.getElementById("btn-Sa").setAttribute('disabled', true);
+            document.getElementById("btn-re").setAttribute('disabled', true);
+            document.getElementById("btn-Re").setAttribute('disabled', true);
+            document.getElementById("btn-ga").setAttribute('disabled', true);
+            document.getElementById("btn-Ga").setAttribute('disabled', true);
+            document.getElementById("btn-ma").setAttribute('disabled', true);
+            document.getElementById("btn-Ma").setAttribute('disabled', true);
+        }
+        // If the higher octave is selected, disable certain buttons
+        if (octave === "high_octave") {
+            document.getElementById("btn-Ma").setAttribute('disabled', true);
+            document.getElementById("btn-dha").setAttribute('disabled', true);
+            document.getElementById("btn-Dha").setAttribute('disabled', true);
+            document.getElementById("btn-ni").setAttribute('disabled', true);
+            document.getElementById("btn-Ni").setAttribute('disabled', true);
+        }
+    });
+
+
+
+    function updateFingering(note) {
+        const octave = document.getElementById("octave-select").value;
+        const pattern = fingeringPatterns.find(item => item.note === note)?.[octave];
+
+        if (!pattern) {
+            document.getElementById("current-note").textContent = `No pattern found for ${note} in ${octave}`;
+            return;
+        }
+
+        // Update holes based on the pattern
+        const holes = document.querySelectorAll(".hole");
+        pattern.forEach((state, index) => {
+            holes[index].classList.remove("open", "half-closed", "closed");
+            if (state === 2) {
+                holes[index].classList.add("closed");
+            } else if (state === 1) {
+                holes[index].classList.add("half-closed");
+            } else {
+                holes[index].classList.add("open");
+            }
+        });
+
+        // Display the current note
+        document.getElementById("current-note").textContent = `${note} (${octave})`;
+    }
+
+    // Example usage
+    updateFingering("Sa");
+</script>
+
+ <!-- Bootstrap JS and dependencies -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+
+<script src="javascript/layout.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+:root {
+    --gradient-start: #028490;
+    --gradient-middle: #2797A2;
+    --gradient-end: #DAF4F7;
+    --button-color: #14B8A6;
+    --container-color: #E0F7FA;
+    --text-color: #141414;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
+    font-family: 'Kalam', cursive;
+    color: var(--text-color);
+}
+
+.navbar {
+    background: transparent !important;
+    padding: 1rem 2rem;
+}
+
+.navbar-brand img {
+    height: 10vh;
+    width: 10vh;
+}
+
+.nav-link {
+    font-family: 'Yatra One', cursive;
+    color: white !important;
+    font-size: 1.2rem;
+    margin: 0 1rem;
+}
+
+.main-container {
+    padding: 2rem;
+}
+
+.input-card {
+    background: var(--container-color);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.notation-container {
+    background: var(--container-color);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.copy-btn {
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 0.5rem 2rem;
+}
+
+.convert-btn {
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 1rem;
+}
+
+.notation-area {
+    min-height: 200px;
+    resize: none;
+}
+
+/* .user-profile {
+    width: 45px;
+    height: 45px;
+    background-color: #AFF1E7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+} */
+
+.user-profile {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #AFF1E7;
+    color: #fff; /* White text */
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #141414;
+}
+
+
+/* .user-profile i {
+    font-size: 1.5rem;
+    color: var(--text-color);
+} */
+
+.navbar .nav-item:last-child {
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Plan</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/mainContent.css">
+    <link rel="stylesheet" href="css/layout.css">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Yatra+One&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <!-- Mobile Menu Button -->
+        <div class="menuShow">
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <span class="tooltip">Menu</span>
+        </div>
+
+
+        <!-- Logo -->
+        <div class="logo">
+            <img src="Images/Swar_logo_NEW_Final_2.png" alt="Logo">
+        </div>
+
+        <!-- Horizontal Navbar Links -->
+        <ul class="nav-links horizontal-nav">
+            <li class="user-profile">
+                <span class="profile-icon" id="profile-icon">J</span>
+            </li>
+            <li><a href="./mainContent.html" class="nav-link active" data-page="mainContent">Home</a></li>
+            <li><a href="./fluteFingering.html" class="nav-link" data-page="fluteFingering">Goto Fingers</a></li>
+            <li><a href="./userGuide.html" class="nav-link" data-page="userGuide">User Guide</a></li>
+            <li><a href="./membership.html" class="nav-link" data-page="membership">Membership</a></li>
+            <li><a href="./contactUs.html" class="nav-link" data-page="contactUs">Contact Us</a></li>
+        </ul>
+
+        <!-- Mobile Navbar Links -->
+        <ul class="nav-links mobile-nav" id="navLinks">
+            <li class="user-profile-mobile" style="margin-bottom: 60px;">J</li>
+            <li>
+                <a href="./mainContent.html" class="nav-link active" data-page="mainContent">
+                    <i class="fas fa-home"></i> Home
+                </a>
+            </li>
+            <li>
+                <a href="./fluteFingering.html" class="nav-link" data-page="fluteFingering">
+                    <i class="fas fa-music"></i> Goto Fingers
+                </a>
+            </li>
+            <li>
+                <a href="./userGuide.html" class="nav-link" data-page="userGuide">
+                    <i class="fas fa-headset"></i> User Guide
+                </a>
+            </li>
+            <li>
+                <a href="./membership.html" class="nav-link" data-page="membership">
+                    <i class="fas fa-info-circle"></i> Membership
+                </a>
+            </li>
+            <li>
+                <a href="./contactUs.html" class="nav-link" data-page="contactUs">
+                    <i class="fas fa-info-circle"></i> Contact Us
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div id="mainContent">
+        <div class="main-container">
+            <div class="loader-overlay">
+                <div class="loader"></div>
+            </div>
+
+            <div class="input-fields" id="container">
+                <div class="scale-input">
+                    <label for="from-scale">Scale I Have:</label>
+                    <select id="from-scale" class="form-control">
+                        <option value="C">C</option>
+                        <option value="C#">C#</option>
+                        <option value="D">D</option>
+                        <option value="D#">D#</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="F#">F#</option>
+                        <option value="G">G</option>
+                        <option value="G#">G#</option>
+                        <option value="A">A</option>
+                        <option value="A#">A#</option>
+                        <option value="B">B</option>
+                    </select>
+                </div>
+                <div class="scale-input">
+                    <label for="to-scale">Scale I Want to Convert :</label>
+                    <select id="to-scale" class="form-control"></select>
+                </div>
+            </div>
+            <div class="notation-container">
+                <div class="notation-boxes">
+                    <div class="notation-box">
+                        <div class="notation-header">
+                            <label for="input-notation">Input Notation:</label>
+                            <button id="copy-input-button" class="copy-btn">
+                                <span class="icon">📋</span> Copy
+                            </button>
+                        </div>
+                        <textarea id="input-notation" placeholder="Enter notation here..."></textarea>
+                    </div>
+                    <div class="notation-box">
+                        <div class="notation-header">
+                            <label for="output-notation">Output Notation:</label>
+                            <button id="copy-output-button" class="copy-btn">
+                                <span class="icon">📋</span> Copy
+                            </button>
+                        </div>
+                        <textarea id="output-notation" readonly></textarea>
+                    </div>
+                </div>
+                <button id="convert-btn" class="convert-btn">Convert Scale</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+
+    <script src="javascript/mainContent.js"></script>
+    <script src="javascript/layout.js"></script>
+</body>
+
+</html>

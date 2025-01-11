@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Plan</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/membership.css">
+    <link rel="stylesheet" href="css/layout.css">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Yatra+One&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <!-- Mobile Menu Button -->
+        <div class="menuShow">
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <span class="tooltip">Menu</span>
+        </div>
+
+
+        <!-- Logo -->
+        <div class="logo">
+            <img src="Images/Swar_logo_NEW_Final_2.png" alt="Logo">
+        </div>
+
+        <!-- Horizontal Navbar Links -->
+        <ul class="nav-links horizontal-nav">
+            <li class="user-profile">
+                <span class="profile-icon" id="profile-icon">J</span>
+            </li>
+            <li><a href="./mainContent.html" class="nav-link active" data-page="mainContent">Home</a></li>
+            <li><a href="./fluteFingering.html" class="nav-link" data-page="fluteFingering">Goto Fingers</a></li>
+            <li><a href="./userGuide.html" class="nav-link" data-page="userGuide">User Guide</a></li>
+            <li><a href="./membership.html" class="nav-link" data-page="membership">Membership</a></li>
+            <li><a href="./contactUs.html" class="nav-link" data-page="contactUs">Contact Us</a></li>
+        </ul>
+
+        <!-- Mobile Navbar Links -->
+        <ul class="nav-links mobile-nav" id="navLinks">
+            <li class="user-profile-mobile" style="margin-bottom: 60px;">J</li>
+            <li>
+                <a href="./mainContent.html" class="nav-link active" data-page="mainContent">
+                    <i class="fas fa-home"></i> Home
+                </a>
+            </li>
+            <li>
+                <a href="./fluteFingering.html" class="nav-link" data-page="fluteFingering">
+                    <i class="fas fa-music"></i> Goto Fingers
+                </a>
+            </li>
+            <li>
+                <a href="./userGuide.html" class="nav-link" data-page="userGuide">
+                    <i class="fas fa-headset"></i> User Guide
+                </a>
+            </li>
+            <li>
+                <a href="./membership.html" class="nav-link" data-page="membership">
+                    <i class="fas fa-info-circle"></i> Membership
+                </a>
+            </li>
+            <li>
+                <a href="./contactUs.html" class="nav-link" data-page="contactUs">
+                    <i class="fas fa-info-circle"></i> Contact Us
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <div id="mainContent">
+
+        <div>
+            <div class="header">
+                <h1 class="title">Choose Your Plan</h1>
+                <p class="subtitle">Select the perfect membership that suits your musical journey.
+                    All plans include access to our core scale conversion technology.
+                </p>
+                <!-- <p class="subtitle">All plans include access to our core scale conversion technology.</p> -->
+            </div>
+
+            <!-- Token-Based Plans Section -->
+            <div class="plans-section">
+                <h2 class="section-title">Token-Based Plans</h2>
+                <div class="cards-container">
+                    <!-- Card 1: Token-Based Plan 1 -->
+                    <div class="card">
+                        <h2 class="card-title">Basic Plan</h2>
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span>1</span>
+                            <!-- <span class="duration">Tokens</span> -->
+                        </div>
+                        <ul class="features">
+                            <li class="feature">Get 100 tokens</li>
+                            <li class="feature">No time limit</li>
+                            <li class="feature">Use tokens for any service</li>
+                        </ul>
+                        <form onsubmit="processPayment(event, 'basicTokenBased', 1, '100 Tokens Plan')">
+                            <button class="btn" type="submit" value="Subscribe Now">Subscribe now</button>
+                        </form>
+                    </div>
+
+                    <!-- Card 2: Token-Based Plan 2 -->
+                    <div class="card">
+                        <h2 class="card-title">Standard Plan</h2>
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span>10</span>
+                            <!-- <span class="duration">Tokens</span> -->
+                        </div>
+                        <ul class="features">
+                            <li class="feature">Get 250 tokens</li>
+                            <li class="feature">No time limit</li>
+                            <li class="feature">Access premium services</li>
+                        </ul>
+                        <form onsubmit="processPayment(event, 'standardTokenBased', 10, '250 Tokens Plan')">
+                            <button class="btn" type="submit" value="Subscribe Now">Subscribe Now</button>
+                        </form>
+                    </div>
+
+                    <!-- Card 3: Token-Based Plan 3 -->
+                    <div class="card">
+                        <h2 class="card-title">Premium Plan</h2>
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span>15</span>
+                            <!-- <span class="duration">Tokens</span> -->
+                        </div>
+                        <ul class="features">
+                            <li class="feature">Get 500 tokens</li>
+                            <li class="feature">No time limit</li>
+                            <li class="feature">Priority support included</li>
+                        </ul>
+                        <form onsubmit="processPayment(event, 'premiumTokenBased', 15, '500 Tokens Plan')">
+                            <button class="btn" type="submit" value="Subscribe Now">Subscribe Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unlimited Token Plans Section -->
+            <div class="plans-section">
+                <h2 class="section-title" style="margin-top: 50px;">Unlimited TOKEN Plans</h2>
+                <div class="cards-container">
+                    <!-- Card 1: Unlimited Token Plan 1 -->
+                    <div class="card">
+                        <h2 class="card-title">Basic Plan</h2>
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span>1</span>
+                            <span class="duration">/ <b> 3 </b> months</span>
+                        </div>
+                        <ul class="features">
+                            <li class="feature">Unlimited tokens</li>
+                            <li class="feature">Access all basic features</li>
+                            <li class="feature">No hidden costs</li>
+                        </ul>
+                        <form onsubmit="processPayment(event, 'Monthly Plan', 1, 'Basic Plan')">
+                            <button class="btn" type="submit" value="Subscribe Now">Subscribe Now</button>
+                        </form>
+                    </div>
+
+                    <!-- Card 2: Unlimited Token Plan 2 -->
+                    <div class="card">
+                        <h2 class="card-title">Standard Plan</h2>
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span>25</span>
+                            <span class="duration">/ <b> 6 </b> months</span>
+                        </div>
+                        <ul class="features">
+                            <li class="feature">Unlimited tokens</li>
+                            <li class="feature">Access premium features</li>
+                            <li class="feature">Priority customer support</li>
+                        </ul>
+                        <form onsubmit="processPayment(event, '6-Month Plan', 25, 'Standard Plan')">
+                            <button class="btn" type="submit" value="Subscribe Now">Subscribe Now</button>
+                        </form>
+                    </div>
+
+                    <!-- Card 3: Unlimited Token Plan 3 -->
+                    <div class="card">
+                        <h2 class="card-title">Premium Plan</h2>
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span>30</span>
+                            <span class="duration">/ <b> 12 </b> months</span>
+                        </div>
+                        <ul class="features">
+                            <li class="feature">Unlimited tokens</li>
+                            <li class="feature">Access all features</li>
+                            <li class="feature">Exclusive discounts on services</li>
+                        </ul>
+                        <form onsubmit="processPayment(event, 'Yearly Plan', 30, 'Premium Plan')">
+                            <button class="btn" type="submit" value="Subscribe Now">Subscribe Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script src="javascript/membership.js"></script>
+    <script src="javascript/layout.js"></script>
+
+</body>
+
+</html>
