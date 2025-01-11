@@ -373,8 +373,8 @@ const app = express();
 
 // Enable CORS
 const corsOptions = {
-  origin: 'https://swarparivrittitrial.vercel.app', // Update with your frontend URL
-  methods: ['GET', 'POST', 'OPTIONS'],
+  origin: ['https://swarparivritti-trial.vercel.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
 app.use(cors(corsOptions));
