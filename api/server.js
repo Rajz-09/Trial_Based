@@ -96,6 +96,10 @@ app.get('/health', (req, res) => {
   res.status(200).send({ status: 'OK', message: 'Service is healthy' });
 });
 
+app.get('/api/health', (req, res) => {
+  res.status(200).send({ status: 'OK', message: 'Service is healthy' });
+});
+
 // Define Routes
 app.get("/api/checkSubscription", authenticateUser, async (req, res) => {
   try {
