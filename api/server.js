@@ -92,10 +92,8 @@ const authenticateUser = (req, res, next) => {
   }
 };
 
-app.get("/api/health", (req, res) => {
-  res.status(200).json({
-    version: "v1.0"
-  });
+app.get('/health', (req, res) => {
+  res.status(200).send({ status: 'OK', message: 'Service is healthy' });
 });
 
 // Define Routes
