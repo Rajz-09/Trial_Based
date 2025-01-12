@@ -15,5 +15,8 @@
     { "src": "/javascript/(.*)", "dest": "/javascript/$1" },
     { "src": "/Images/(.*)", "dest": "/Images/$1" },
     { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "rewrites": [
+    { "src": "/api/(.*)", "dest": "/api/server.js" }
   ]
 }
