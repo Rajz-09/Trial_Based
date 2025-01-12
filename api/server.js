@@ -29,6 +29,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.raw({ type: "application/json" })); // Required for Razorpay Webhook
 
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
 // Connect to MongoDB Atlas
 mongoose
   .connect(process.env.MONGO_URI)
@@ -90,7 +92,7 @@ const authenticateUser = (req, res, next) => {
   }
 };
 
-app.get("/health", (req, res) => {
+app.get("/api/health", (req, res) => {
   res.status(200).json({
     version: "v1.0"
   });

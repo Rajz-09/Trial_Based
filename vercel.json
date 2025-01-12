@@ -3,6 +3,7 @@
   "version": 2,
   "builds": [
     { "src": "api/server.js", "use": "@vercel/node" },
+    { "src": "api/.env" , "use": "@vercel/static"},
     { "src": "*.html", "use": "@vercel/static" },
     { "src": "css/**", "use": "@vercel/static" },
     { "src": "javascript/**", "use": "@vercel/static" },
