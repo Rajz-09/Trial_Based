@@ -32,10 +32,10 @@ app.use(express.raw({ type: "application/json" })); // Required for Razorpay Web
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
 // Connect to MongoDB Atlas
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("Connected to MongoDB Atlas"))
-  .catch((err) => console.error("Error connecting to MongoDB:", err));
+// mongoose
+//   .connect(process.env.MONGO_URI)
+//   .then(() => console.log("Connected to MongoDB Atlas"))
+//   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
 // Razorpay Configuration
 const razorpayInstance = new Razorpay({
