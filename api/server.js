@@ -13,13 +13,13 @@ const Razorpay = require("razorpay");
 const app = express();
 
 // Enable CORS
-const corsOptions = {
-  origin: ['https://swarparivrittidemo.vercel.app'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true, // Include credentials if needed
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: ['https://swarparivrittidemo.vercel.app'],
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+//   credentials: true, // Include credentials if needed
+// };
+// app.use(cors(corsOptions));
 
 // Handle preflight requests explicitly
 app.options("*", cors(corsOptions)); // Allow OPTIONS for all routes
