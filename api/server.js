@@ -90,6 +90,12 @@ const authenticateUser = (req, res, next) => {
   }
 };
 
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    version: "v1.0"
+  });
+});
+
 // Define Routes
 app.get("/api/checkSubscription", authenticateUser, async (req, res) => {
   try {
@@ -211,6 +217,13 @@ app.post("/api/login", async (req, res) => {
 
 app.post('/api/logout', (req, res) => {
   res.json({ message: 'Logout successful' });
+});
+
+// Start the Server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+
+  console.log(`Server running on http://localhost:${PORT}`);
 });
 
 // Export Express App as Serverless Function
