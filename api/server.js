@@ -22,7 +22,7 @@ const app = express();
 // app.use(cors(corsOptions));
 
 // Handle preflight requests explicitly
-app.options("*", cors(corsOptions)); // Allow OPTIONS for all routes
+// app.options("*", cors(corsOptions)); // Allow OPTIONS for all routes
 
 // Middleware
 app.use(bodyParser.json());
