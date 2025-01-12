@@ -32,15 +32,15 @@ app.use(express.raw({ type: "application/json" })); // Required for Razorpay Web
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
 // Connect to MongoDB Atlas
-// mongoose
-//   .connect(process.env.MONGO_URI)
-//   .then(() => console.log("Connected to MongoDB Atlas"))
-//   .catch((err) => console.error("Error connecting to MongoDB:", err));
+mongoose
+  .connect(process.env.MONGO_URI || "mongodb+srv://rajzad912:rajvi912@cluster0.cwhcege.mongodb.net/NotationTransposer")
+  .then(() => console.log("Connected to MongoDB Atlas"))
+  .catch((err) => console.error("Error connecting to MongoDB:", err));
 
 // Razorpay Configuration
 const razorpayInstance = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID,
-  key_secret: process.env.RAZORPAY_SECRET,
+  key_id: process.env.RAZORPAY_KEY_ID || "rzp_test_9uQfEHNbxVSOMG",
+  key_secret: process.env.RAZORPAY_SECRET || "pAWjzSQ2MTGNhOBdijGZVxD3",
 });
 
 // User Schema
