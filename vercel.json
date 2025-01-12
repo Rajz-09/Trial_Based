@@ -9,13 +9,6 @@
     { "src": "javascript/**", "use": "@vercel/static" },
     { "src": "Images/**", "use": "@vercel/static" }
   ],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/api/server.js" },
-    { "src": "/css/(.*)", "dest": "/css/$1" },
-    { "src": "/javascript/(.*)", "dest": "/javascript/$1" },
-    { "src": "/Images/(.*)", "dest": "/Images/$1" },
-    { "src": "/(.*)", "dest": "/index.html" }
-  ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/server.js" }
   ]
