@@ -184,18 +184,24 @@ body {
 }
 
 @media (max-width: 991px) {
+    #mainContent {
+        margin: 0;
+        padding: 0;
+    }
+
     .horizontal-nav {
         display: none;
     }
 
     .mobile-menu-btn {
         display: block;
-        margin-left: 10px;
     }
 
     .navbar {
         z-index: 50;
-        flex-wrap: nowrap ;
+        flex-wrap: nowrap;
+        margin: 0;
+        padding: 0px 0px 20px 0px ;
     }
 
     .mobile-menu-btn {
@@ -205,11 +211,14 @@ body {
         background-color: transparent;
         border: none;
         font-size: 1.5rem;
+        margin-right: 10px;
     }
 
     .logo {
         order: 2;
         margin-left: auto;
+        height: 4rem;
+        width: 14em;
     }
 
     .user-profile {
@@ -220,7 +229,7 @@ body {
         position: fixed;
         top: 0;
         left: -100%;
-        width: 200px;
+        width: 130px;
         height: 100%;
         background: linear-gradient(145deg, #6c9aca, #06b399);
         display: flex;
@@ -264,7 +273,7 @@ body {
         text-decoration: none;
         transition: all 0.3s ease-in-out;
         border-radius: 10px;
-        padding: 15px 20px;
+        padding: 15px 10px;
         font-size: 1.1rem;
     }
 
@@ -280,19 +289,20 @@ body {
 
     .user-profile-mobile {
         margin-top: 30px;
-        width: 100px !important;
-        height: 100px;
+        margin-bottom: 30px !important;
+        width: 50px !important;
+        height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
         background: #00796B;
         color: white;
-        font-size: 3rem;
+        font-size: 1.5rem;
         font-weight: bold;
         border-radius: 50%;
-        margin-bottom: 1.2rem;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
+
 }
 
 
