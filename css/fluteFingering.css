@@ -9,19 +9,9 @@
     --border-radius: 15px;
 }
 
-/* body {
-    font-family: 'Kalam', cursive;
-    background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-    display: grid;
-    place-items: center;
-} */
-
 .transposer-container {
     background: var(--container-color);
-    padding: 2rem;
+    padding: 1rem;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     width: min(90%, 800px);
@@ -81,6 +71,7 @@
     margin: 20px auto;
     display: block;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    align-items: center;
 }
 
 
@@ -180,8 +171,9 @@
 
 @media (max-width: 576px) {
     #flute {
-        width: 100%;
+        width: 90%;
         max-width: 400px;
+        align-items: center;
     }
 }
 
@@ -189,6 +181,8 @@
     #flute {
         width: 100%;
         max-width: 600px;
+        align-items: center;
+
     }
     
 }
@@ -197,6 +191,8 @@
     #flute {
         width: 100%;
         max-width: 800px;
+        align-items: center;
+
     }
 
 }
@@ -205,5 +201,7 @@
     #flute {
         width: 100%;
         max-width: 1000px;
+        align-items: center;
+
     }
 }
