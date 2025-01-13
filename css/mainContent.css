@@ -132,6 +132,77 @@ textarea {
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        order: 1;
+        z-index: 1001;
+    }
+
+    .logo {
+        order: 2;
+    }
+
+    .user-profile {
+        display: none;
+    }
+
+    .user-profile-mobile {
+        display: block;
+        background-color: rgba(107, 114, 128, 0.8);
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding: 0.8rem 1rem;
+        border-radius: 8px;
+        /* margin: 1.5rem auto; */
+    }
+
+    .nav-links {
+        display: flex;
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 7rem;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(8px);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1.2rem;
+        margin-right: 0;
+        align-items: center;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+        border-radius: 10%;
+    }
+
+    .nav-links.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-links a.active {
+        background-color: #AFF1E7;
+    }
+
+    .nav-links li {
+        width: 90%;
+    }
+
     .input-fields {
         flex-direction: column;
     }
@@ -140,6 +211,9 @@ textarea {
         flex-direction: column;
     }
 }
+
+
+
 
 .main-container {
     position: relative;
