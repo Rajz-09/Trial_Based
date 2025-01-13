@@ -194,7 +194,7 @@ body {
 
     .navbar {
         z-index: 50;
-        flex-wrap: wrap;
+        flex-wrap: nowrap ;
     }
 
     .mobile-menu-btn {
@@ -203,7 +203,7 @@ body {
         z-index: 1001;
         background-color: transparent;
         border: none;
-        font-size: 3rem;
+        font-size: 1.5rem;
     }
 
     .logo {
