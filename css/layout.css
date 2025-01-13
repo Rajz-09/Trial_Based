@@ -210,15 +210,15 @@ body {
         z-index: 1001;
         background-color: transparent;
         border: none;
-        font-size: 1.5rem;
+        font-size: 2.3rem;
         margin-right: 10px;
     }
 
     .logo {
         order: 2;
         margin-left: auto;
-        height: 4rem;
-        width: 14em;
+        height: 6rem;
+        width: 17em;
     }
 
     .user-profile {
