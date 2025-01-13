@@ -179,6 +179,70 @@ app.post("/api/createOrder", authenticateUser, async (req, res) => {
   }
 });
 
+app.post('/api/increment-convert', async (req, res) => {
+  const { email } = req.body;
+
+  try {
+    const user = await User.findOne({ email });
+    
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    const isTokenPlan = user.subscriptionPlan.includes('Token Based');
+    const hasValidUnlimitedPlan = !isTokenPlan && user.subscriptionExpiry && user.subscriptionExpiry > new Date();
+
+    if (isTokenPlan) {
+      // For token-based plans
+      if (user.tokens <= 0) {
+        return res.status(403).json({ message: 'No tokens remaining' });
+      }
+
+      // Calculate remaining tokens after this conversion
+      const remainingTokens = user.tokens - 1;
+      
+      // If this conversion will use the last token, set expiry date to now
+      const updateData = { 
+        $inc: { 
+          convertCount: 1,
+          tokens: -1 
+        }
+      };
+
+      if (remainingTokens === 0) {
+        updateData.$set = {
+          subscriptionExpiry: new Date(),
+          subscriptionStatus: false
+        };
+      }
+
+      await User.findOneAndUpdate({ email }, updateData);
+
+    } else if (hasValidUnlimitedPlan) {
+      // For unlimited plan users, just increment convert count
+      await User.findOneAndUpdate(
+        { email },
+        { $inc: { convertCount: 1 } }
+      );
+    } else {
+      return res.status(403).json({ message: 'Subscription expired or invalid' });
+    }
+
+    const updatedUser = await User.findOne({ email });
+    res.json({ 
+      message: 'Convert count updated', 
+      convertCount: updatedUser.convertCount,
+      tokensRemaining: updatedUser.tokens,
+      subscriptionStatus: updatedUser.subscriptionStatus,
+      subscriptionExpiry: updatedUser.subscriptionExpiry
+    });
+  } catch (err) {
+    console.error("Error updating convert count:", err.message);
+    res.status(500).json({ message: 'Error updating count', error: err.message });
+  }
+});
+
+
 app.post("/api/register", async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
