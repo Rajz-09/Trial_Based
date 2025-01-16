@@ -68,7 +68,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
         const data = await response.json();
         if (response.ok) {
             alert(data.message);
-            window.location.href = "index.html"; // Redirect to login page
+            window.location.href = "mainContent.html"; // Redirect to login page
         } else {
             alert(data.message);
         }
