@@ -77,13 +77,13 @@ document.addEventListener("DOMContentLoaded", () => {
     function applyBlurEffect() {
         const container = document.getElementById('mainContent'); // Reference to main content container
         const drawer = document.getElementById('navLinks'); // Reference to the sidebar (mobile-nav)
-
-        // Check if the screen size is less than or equal to 1280px and if the sidebar is open
-        if (window.innerWidth <= 768 && drawer.classList.contains('active')) {
+    
+        // Check if the sidebar is open
+        if (drawer.classList.contains('active')) {
             container.style.filter = 'blur(5px)'; // Add blur effect when sidebar is open
             container.style.pointerEvents = 'none'; // Disable interactions (optional)
         } else {
-            container.style.filter = 'none'; // Remove blur when sidebar is closed or on larger screens
+            container.style.filter = 'none'; // Remove blur when sidebar is closed
             container.style.pointerEvents = 'auto'; // Re-enable interactions
         }
     }
