@@ -27,9 +27,9 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     background-color: transparent !important;
     position: relative;
     z-index: 1;
@@ -37,8 +37,8 @@ body {
 }
 
 .logo {
-    height: 6rem;
-    width: 20rem;
+    height: 5rem;
+    width: 16rem;
     order: 1;
 }
 
@@ -86,6 +86,7 @@ body {
     order: 2;
     align-items: center;
     background-color: transparent;
+    margin-bottom: 0px !important;
 }
 
 .horizontal-nav a {
@@ -93,7 +94,7 @@ body {
     color: white;
     font-weight: 500;
     font-size: 1.2rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.7rem !important;
     border-radius: 4px;
     transition: all 0.3s ease;
     font-family: 'Yatra One';
@@ -112,8 +113,8 @@ body {
 
 .user-profile {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background-color: #AFF1E7;
     border-radius: 50%;
     display: flex;
