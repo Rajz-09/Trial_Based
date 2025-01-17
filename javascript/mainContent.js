@@ -118,7 +118,7 @@ async function fetchWithAuth(url, method = "GET", body = null) {
 // Function to fetch subscription status
 async function checkSubscriptionStatus() {
     try {
-        const data = await fetchWithAuth("https://swarparivrittidemo.vercel.app/api/checkSubscription");
+        const data = await fetchWithAuth("https://www.swarparivritti.com/api/checkSubscription");
         console.log("Subscription API Response:", data); // Debugging output
 
         // Use subscriptionActive directly as it matches the backend response
@@ -147,7 +147,7 @@ async function fetchStoredConvertCount() {
         const decodedToken = jwt_decode(token); // Decode token to get user email
         const email = decodedToken.email;
 
-        const data = await fetchWithAuth("https://swarparivrittidemo.vercel.app/api/increment-convert", "POST", { email });
+        const data = await fetchWithAuth("https://www.swarparivritti.com/api/increment-convert", "POST", { email });
         storedConvertCount = data.convertCount || 0;
         //console.log("Stored Convert Count:", storedConvertCount);
     } catch (error) {
@@ -281,7 +281,7 @@ async function incrementConvertCount() {
         const decodedToken = jwt_decode(token);
         const email = decodedToken.email;
 
-        const data = await fetchWithAuth("https://swarparivrittidemo.vercel.app/api/increment-convert", "POST", { email });
+        const data = await fetchWithAuth("https://www.swarparivritti.com/api/increment-convert", "POST", { email });
         return data.convertCount; // Return updated count from backend
     } catch (error) {
         console.error("Error incrementing convert count:", error.message);

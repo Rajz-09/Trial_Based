@@ -14,7 +14,7 @@ const app = express();
 
 // Enable CORS
 const corsOptions = {
-  origin: ['https://swarparivrittidemo.vercel.app'],
+  origin: ['https://www.swarparivritti.com'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true, // Include credentials if needed
