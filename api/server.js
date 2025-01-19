@@ -13,13 +13,25 @@ const Razorpay = require("razorpay");
 const app = express();
 
 // Enable CORS
+// const corsOptions = {
+//   origin: ['https://www.swarparivritti.com'],
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+//   credentials: true, // Include credentials if needed
+// };
+// app.use(cors(corsOptions));
+
 const corsOptions = {
-  origin: ['https://www.swarparivritti.com'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true, // Include credentials if needed
+  origin: [
+    "https://www.swarparivritti.com", // Production domain
+    "http://localhost:5500", // Local development environment
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
 };
 app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 // Handle preflight requests explicitly
 app.options("*", cors(corsOptions)); // Allow OPTIONS for all routes
