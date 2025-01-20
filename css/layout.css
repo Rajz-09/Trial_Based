@@ -111,6 +111,89 @@ body {
     color: #000;
 }
 
+
+
+/* Profile Dropdown Styles */
+.profile-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    width: 220px;
+    padding: 8px 0;
+    z-index: 1010;
+}
+
+.profile-dropdown.show {
+    display: block;
+}
+
+.profile-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #ffffff;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: #333333 !important;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    font-size: 14px;
+    font-family: 'Yatra One';
+    background-color: transparent;
+    margin-bottom: 0px !important;
+}
+
+.casual:hover {
+    background-color: #f5f5f5;
+    color: #028490 !important;
+}
+
+.casual:hover i {
+    color: #028490;
+}
+
+.logout:hover {
+    background-color: #f5f5f5;
+    color: rgb(215, 15, 15) !important;
+}
+
+.logout:hover i {
+    color: rgb(215, 15, 15);
+}
+
+.dropdown-item i {
+    margin-right: 10px;
+    width: 16px;
+    color: #666666;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: #eee;
+    margin: 8px 0;
+}
+
+
+
+
 .user-profile {
     position: relative;
     width: 50px;

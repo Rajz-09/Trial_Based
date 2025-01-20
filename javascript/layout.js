@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function applyBlurEffect() {
         const container = document.getElementById('mainContent'); // Reference to main content container
         const drawer = document.getElementById('navLinks'); // Reference to the sidebar (mobile-nav)
-    
+
         // Check if the sidebar is open
         if (drawer.classList.contains('active')) {
             container.style.filter = 'blur(5px)'; // Add blur effect when sidebar is open
@@ -116,22 +116,42 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initially apply blur effect on page load if needed
     applyBlurEffect();
 
-    const logoutLink = document.querySelector('.nav-link[data-page="index"]');
+    // Select all logout links with the 'data-page="index"' attribute
+    const logoutLinks = document.querySelectorAll('[data-page="index"]');
 
-    if (logoutLink) {
-        logoutLink.addEventListener('click', (event) => {
+    // Add the logout functionality to all selected elements
+    logoutLinks.forEach((logoutLink) => {
+        logoutLink.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default anchor behavior
 
             // Remove the token and email from local storage (or session storage if used)
-            localStorage.removeItem('token');
-            localStorage.removeItem('userEmail');
+            localStorage.removeItem("token");
+            localStorage.removeItem("userEmail");
 
-            // Optional: Clear all local storage if needed
-            // localStorage.clear();
 
             // Redirect to the login page
-            window.location.href = 'index.html';
+            window.location.href = "index.html";
         });
-    }
+    });
 
+    const profileWrapper = document.querySelector('.profile-wrapper');
+    const dropdown = document.querySelector('.profile-dropdown');
+
+    // Toggle dropdown on profile click
+    profileWrapper.addEventListener('click', function (e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('show');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function (e) {
+        if (!profileWrapper.contains(e.target)) {
+            dropdown.classList.remove('show');
+        }
+    });
+
+    // Prevent dropdown from closing when clicking inside it
+    dropdown.addEventListener('click', function (e) {
+        e.stopPropagation();
+    });
 });
