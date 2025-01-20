@@ -134,24 +134,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    const profileWrapper = document.querySelector('.profile-wrapper');
-    const dropdown = document.querySelector('.profile-dropdown');
-
-    // Toggle dropdown on profile click
-    profileWrapper.addEventListener('click', function (e) {
-        e.stopPropagation();
-        dropdown.classList.toggle('show');
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function (e) {
-        if (!profileWrapper.contains(e.target)) {
-            dropdown.classList.remove('show');
-        }
-    });
-
-    // Prevent dropdown from closing when clicking inside it
-    dropdown.addEventListener('click', function (e) {
-        e.stopPropagation();
-    });
 });
