@@ -240,47 +240,10 @@ function showLoader() {
 //     }
 // });
 
-// document.getElementById("convert-btn").addEventListener("click", async () => {
-//     try {
-//         const subscriptionStatus = await checkSubscriptionStatus();
-//         console.log("Current subscription status:", subscriptionStatus);
-
-//         // Increment convert count in the backend and fetch the updated value
-//         const updatedConvertCount = await incrementConvertCount();
-//         storedConvertCount = updatedConvertCount;
-//         const totalConvertCount = storedConvertCount;
-
-//         console.log("Total Convert Count:", totalConvertCount);
-
-//         if (!subscriptionStatus && totalConvertCount >= 10) {
-//             window.location.href = "membership.html";
-//             return;
-//         }
-
-//         const loaderOverlay = showLoader();
-//         if (!loaderOverlay) {
-//             throw new Error("Could not create loader overlay");
-//         }
-
-//         setTimeout(() => {
-//             loaderOverlay.remove();
-//             transposeNotes();
-//         }, 2000);
-//     } catch (error) {
-//         console.error("Error during conversion:", error.message);
-//         alert("An error occurred. Please try again later.");
-//     }
-// });
-
-
 document.getElementById("convert-btn").addEventListener("click", async () => {
     try {
         const subscriptionStatus = await checkSubscriptionStatus();
         console.log("Current subscription status:", subscriptionStatus);
-
-        // Update the Subscription Status in the dropdown
-        const subscriptionStatusElement = document.getElementById("subscription-status");
-        subscriptionStatusElement.textContent = `Subscription Status: ${subscriptionStatus ? "Active" : "Inactive"}`;
 
         // Increment convert count in the backend and fetch the updated value
         const updatedConvertCount = await incrementConvertCount();
@@ -288,10 +251,6 @@ document.getElementById("convert-btn").addEventListener("click", async () => {
         const totalConvertCount = storedConvertCount;
 
         console.log("Total Convert Count:", totalConvertCount);
-
-        // Update the Token Count in the dropdown
-        const tokenCountElement = document.getElementById("token-count");
-        tokenCountElement.textContent = `Token Count: ${totalConvertCount}`;
 
         if (!subscriptionStatus && totalConvertCount >= 10) {
             window.location.href = "membership.html";
@@ -312,6 +271,47 @@ document.getElementById("convert-btn").addEventListener("click", async () => {
         alert("An error occurred. Please try again later.");
     }
 });
+
+
+// document.getElementById("convert-btn").addEventListener("click", async () => {
+//     try {
+//         const subscriptionStatus = await checkSubscriptionStatus();
+//         console.log("Current subscription status:", subscriptionStatus);
+
+//         // Update the Subscription Status in the dropdown
+//         const subscriptionStatusElement = document.getElementById("subscription-status");
+//         subscriptionStatusElement.textContent = `Subscription Status: ${subscriptionStatus ? "Active" : "Inactive"}`;
+
+//         // Increment convert count in the backend and fetch the updated value
+//         const updatedConvertCount = await incrementConvertCount();
+//         storedConvertCount = updatedConvertCount;
+//         const totalConvertCount = storedConvertCount;
+
+//         console.log("Total Convert Count:", totalConvertCount);
+
+//         // Update the Token Count in the dropdown
+//         const tokenCountElement = document.getElementById("token-count");
+//         tokenCountElement.textContent = `Token Count: ${totalConvertCount}`;
+
+//         if (!subscriptionStatus && totalConvertCount >= 10) {
+//             window.location.href = "membership.html";
+//             return;
+//         }
+
+//         const loaderOverlay = showLoader();
+//         if (!loaderOverlay) {
+//             throw new Error("Could not create loader overlay");
+//         }
+
+//         setTimeout(() => {
+//             loaderOverlay.remove();
+//             transposeNotes();
+//         }, 2000);
+//     } catch (error) {
+//         console.error("Error during conversion:", error.message);
+//         alert("An error occurred. Please try again later.");
+//     }
+// });
 
 
 
