@@ -116,5 +116,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initially apply blur effect on page load if needed
     applyBlurEffect();
 
+    const logoutLink = document.querySelector('.nav-link[data-page="index"]');
+
+    if (logoutLink) {
+        logoutLink.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent the default anchor behavior
+
+            // Remove the token and email from local storage (or session storage if used)
+            localStorage.removeItem('token');
+            localStorage.removeItem('userEmail');
+
+            // Optional: Clear all local storage if needed
+            // localStorage.clear();
+
+            // Redirect to the login page
+            window.location.href = 'index.html';
+        });
+    }
 
 });
