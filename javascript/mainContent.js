@@ -128,7 +128,7 @@ async function checkSubscriptionStatus() {
             console.error("Subscription active status not found in response:", data);
             isSubscriptionActive = false;
         }
-        
+
         console.log("Subscription Active:", isSubscriptionActive);
         return isSubscriptionActive;
     } catch (error) {
@@ -200,7 +200,7 @@ function showLoader() {
         console.error("Main container not found");
         return null;
     }
-    
+
     mainContainer.appendChild(loaderOverlay);
     loaderOverlay.style.visibility = "visible";
     loaderOverlay.style.display = "flex";
