@@ -40,10 +40,11 @@
                 <div class="profile-wrapper">
                     <span class="profile-icon" id="profile-icon">J</span>
                     <div class="profile-dropdown">
-                        <p class="dropdown-item casual">Subscription Status : Inaactive</p>
+                        <p class="dropdown-item casual">Subscription Status : Inactive</p>
                         <p class="dropdown-item casual">Token Count : 0</p>
                         <div class="dropdown-divider"></div>
-                        <a href="./index.html" class="dropdown-item logout" data-page="index"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                        <a href="./index.html" class="dropdown-item logout" data-page="index"><i
+                                class="fas fa-sign-out-alt"></i>Logout</a>
                     </div>
                 </div>
             </li>
@@ -152,24 +153,29 @@
             const profileWrapper = document.querySelector('.profile-wrapper');
             const dropdown = document.querySelector('.profile-dropdown');
 
-            // Toggle dropdown on profile click
+            // Check if elements exist
+            if (!profileWrapper || !dropdown) {
+                console.error('Dropdown elements not found.');
+                return;
+            }
+
+            // Toggle dropdown visibility on click
             profileWrapper.addEventListener('click', function (e) {
-                e.stopPropagation();
+                e.stopPropagation(); // Prevent click propagation
                 dropdown.classList.toggle('show');
             });
 
             // Close dropdown when clicking outside
-            document.addEventListener('click', function (e) {
-                if (!profileWrapper.contains(e.target)) {
-                    dropdown.classList.remove('show');
-                }
+            document.addEventListener('click', function () {
+                dropdown.classList.remove('show');
             });
 
-            // Prevent dropdown from closing when clicking inside it
+            // Prevent dropdown from closing on internal click
             dropdown.addEventListener('click', function (e) {
                 e.stopPropagation();
             });
         });
+
     </script>
 
     <!-- Bootstrap JS and dependencies -->
